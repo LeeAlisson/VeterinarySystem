@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VeterinarySystem.Pages.NovoAnimalPage"
+             Title="Novo Animal"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+            <Label Text="Novo Animal" FontSize="24" FontAttributes="Bold" TextColor="#6A0DAD" Margin="0,0,0,16" />
+
+            <Frame BorderColor="#6A0DAD" Padding="15" CornerRadius="5">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Informações do Animal" FontAttributes="Bold" TextColor="#6A0DAD" />
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Nome" />
+                        <Entry x:Name="NomeEntry" Placeholder="Nome do animal" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Espécie" />
+                        <Picker x:Name="EspeciePicker" Title="Selecione a espécie" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Raça" />
+                        <Entry x:Name="RacaEntry" Placeholder="Raça do animal" />
+                    </VerticalStackLayout>
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <VerticalStackLayout Grid.Column="0" Spacing="4">
+                            <Label Text="Data de Nascimento" />
+                            <DatePicker x:Name="DataNascimentoDatePicker" Format="dd/MM/yyyy" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="4">
+                            <Label Text="Sexo" />
+                            <Picker x:Name="SexoPicker" Title="Selecione">
+                                <Picker.Items>
+                                    <x:String>Macho</x:String>
+                                    <x:String>Fêmea</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Peso (kg)" />
+                        <Entry x:Name="PesoEntry" Placeholder="0.00" Keyboard="Numeric" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BorderColor="#6A0DAD" Padding="15" CornerRadius="5">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Proprietário" FontAttributes="Bold" TextColor="#6A0DAD" />
+
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                        <VerticalStackLayout Grid.Column="0" Spacing="4">
+                            <Label Text="Selecione o Proprietário" />
+                            <Picker x:Name="ProprietarioPicker" Title="Selecione o proprietário" />
+                        </VerticalStackLayout>
+
+                        <Button Grid.Column="1" Text="Novo" BackgroundColor="#6A0DAD" TextColor="White" 
+                                VerticalOptions="End" Clicked="OnNovoProprietarioClicked" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BorderColor="#6A0DAD" Padding="15" CornerRadius="5">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Observações" FontAttributes="Bold" TextColor="#6A0DAD" />
+
+                    <Editor x:Name="ObservacoesEditor" Placeholder="Observações sobre o animal" 
+                            HeightRequest="100" AutoSize="TextChanges" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="20" Margin="0,20,0,0">
+                <Button Grid.Column="0" Text="Cancelar" BackgroundColor="#F5F5DC" TextColor="Black" 
+                        Clicked="OnCancelarClicked" />
+                <Button Grid.Column="1" Text="Salvar" BackgroundColor="#6A0DAD" TextColor="White" 
+                        Clicked="OnSalvarClicked" />
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

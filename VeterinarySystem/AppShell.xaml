@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="VeterinarySystem.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:VeterinarySystem.Pages"
+    Shell.FlyoutBehavior="Flyout"
+    BackgroundColor="#6A0DAD"
+    FlyoutBackgroundColor="White"
+    TitleColor="White">
+
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="#6A0DAD" HeightRequest="150">
+            <VerticalStackLayout VerticalOptions="Center" Padding="20">
+                <Label Text="PetCare" TextColor="White" FontSize="22" FontAttributes="Bold" />
+                <Label Text="Sistema Veterinário" TextColor="White" FontSize="14" />
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <ShellContent
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate local:DashboardPage}"
+        Route="DashboardPage" />
+
+    <ShellContent
+        Title="Clientes"
+        ContentTemplate="{DataTemplate local:ClientesPage}"
+        Route="ClientesPage" />
+
+    <ShellContent
+        Title="Animais"
+        ContentTemplate="{DataTemplate local:AnimaisPage}"
+        Route="AnimaisPage" />
+
+    <ShellContent
+        Title="Espécies"
+        ContentTemplate="{DataTemplate local:EspeciesPage}"
+        Route="EspeciesPage" />
+
+    <ShellContent
+        Title="Sobre o Aluno"
+        ContentTemplate="{DataTemplate local:SobreAlunoPage}"
+        Route="SobreAlunoPage" />
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Sair" BackgroundColor="#F5F5DC" TextColor="Black" Clicked="OnSairClicked" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+</Shell>

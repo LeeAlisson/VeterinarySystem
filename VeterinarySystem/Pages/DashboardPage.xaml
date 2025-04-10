@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VeterinarySystem.Pages.DashboardPage"
+             Title="Dashboard"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label Text="Dashboard" FontSize="24" FontAttributes="Bold" TextColor="#6A0DAD" Margin="0,0,0,16" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="20" RowDefinitions="Auto,*" RowSpacing="20">
+                <!-- Card de Clientes -->
+                <Frame Grid.Column="0" Grid.Row="0" BorderColor="#6A0DAD" CornerRadius="10" Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Clientes" FontSize="18" FontAttributes="Bold" TextColor="#6A0DAD" />
+                        <Label x:Name="TotalClientesLabel" Text="3" FontSize="36" FontAttributes="Bold" HorizontalOptions="Center" />
+                        <Button Text="Novo Cliente" BackgroundColor="#6A0DAD" TextColor="White" 
+                                Clicked="OnNovoClienteClicked" />
+                        <Button Text="Buscar Cliente" BackgroundColor="#F5F5DC" TextColor="Black" 
+                                Clicked="OnBuscarClienteClicked" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Card de Animais -->
+                <Frame Grid.Column="1" Grid.Row="0" BorderColor="#6A0DAD" CornerRadius="10" Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Animais" FontSize="18" FontAttributes="Bold" TextColor="#6A0DAD" />
+                        <Label x:Name="TotalAnimaisLabel" Text="5" FontSize="36" FontAttributes="Bold" HorizontalOptions="Center" />
+                        <Button Text="Novo Animal" BackgroundColor="#6A0DAD" TextColor="White" 
+                                Clicked="OnNovoAnimalClicked" />
+                        <Button Text="Buscar Animal" BackgroundColor="#F5F5DC" TextColor="Black" 
+                                Clicked="OnBuscarAnimalClicked" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Últimos Clientes -->
+                <Frame Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderColor="#6A0DAD" CornerRadius="10" Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Últimos Clientes" FontSize="18" FontAttributes="Bold" TextColor="#6A0DAD" />
+
+                        <CollectionView x:Name="UltimosClientesCollection" HeightRequest="200">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame Margin="0,5" BorderColor="#F5F5DC" Padding="10">
+                                        <Grid ColumnDefinitions="*,Auto">
+                                            <VerticalStackLayout Grid.Column="0">
+                                                <Label Text="{Binding nome}" FontAttributes="Bold" />
+                                                <Label Text="{Binding telefone}" FontSize="14" />
+                                            </VerticalStackLayout>
+                                            <Button Grid.Column="1" Text="Ver" BackgroundColor="#6A0DAD" TextColor="White" 
+                                                    WidthRequest="60" HeightRequest="40" VerticalOptions="Center" />
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

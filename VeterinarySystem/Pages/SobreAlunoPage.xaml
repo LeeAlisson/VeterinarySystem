@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VeterinarySystem.Pages.SobreAlunoPage"
+             Title="Sobre o Aluno"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center">
+            <Label Text="Sobre o Aluno" FontSize="24" FontAttributes="Bold" TextColor="#6A0DAD" HorizontalOptions="Center" />
+
+            <Frame BorderColor="#6A0DAD" WidthRequest="200" HeightRequest="200" CornerRadius="100" 
+                   HorizontalOptions="Center" Padding="0" IsClippedToBounds="True">
+                <Image x:Name="FotoAluno" Aspect="AspectFill" 
+                       Source="dotnet_bot.png" />
+            </Frame>
+
+            <Button Text="Selecionar Foto" BackgroundColor="#F5F5DC" TextColor="Black" 
+                    Clicked="OnSelecionarFotoClicked" HorizontalOptions="Center" />
+
+            <Frame BorderColor="#6A0DAD" Padding="15" CornerRadius="5">
+                <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="15">
+                    <VerticalStackLayout Grid.Row="0" Spacing="5">
+                        <Label Text="Nome:" FontAttributes="Bold" TextColor="#6A0DAD" />
+                        <Label Text="Alisson Lee Martins" FontSize="18" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Row="1" Spacing="5">
+                        <Label Text="RA:" FontAttributes="Bold" TextColor="#6A0DAD" />
+                        <Label Text="2402946" FontSize="18" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Row="2" Spacing="5">
+                        <Label Text="Hobby:" FontAttributes="Bold" TextColor="#6A0DAD" />
+                        <Label Text="Tocar guitarra e jogar FPS" FontSize="18" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+            <Frame BorderColor="#6A0DAD" Padding="15" CornerRadius="5">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Sobre o Projeto" FontAttributes="Bold" TextColor="#6A0DAD" />
+                    <Label Text="Este é um projeto de sistema veterinário desenvolvido para a disciplina de Programação Mobile. O sistema permite o gerenciamento de clientes, animais e espécies em uma clínica veterinária." 
+                           TextType="Text" />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

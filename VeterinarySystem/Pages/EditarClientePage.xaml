@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VeterinarySystem.Pages.EditarClientePage"
+             Title="Editar Cliente"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+            <Label Text="Editar Cliente" FontSize="24" FontAttributes="Bold" TextColor="#6A0DAD" Margin="0,0,0,16" />
+
+            <Frame BorderColor="#6A0DAD" Padding="15" CornerRadius="5">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Informações Pessoais" FontAttributes="Bold" TextColor="#6A0DAD" />
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Nome" />
+                        <Entry x:Name="NomeEntry" Placeholder="Nome completo" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="CPF" />
+                        <Entry x:Name="CpfEntry" Placeholder="000.000.000-00" Keyboard="Numeric" MaxLength="14" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Telefone" />
+                        <Entry x:Name="TelefoneEntry" Placeholder="(00) 00000-0000" Keyboard="Telephone" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Email" />
+                        <Entry x:Name="EmailEntry" Placeholder="email@exemplo.com" Keyboard="Email" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BorderColor="#6A0DAD" Padding="15" CornerRadius="5">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Endereço" FontAttributes="Bold" TextColor="#6A0DAD" />
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Endereço Completo" />
+                        <Entry x:Name="EnderecoEntry" Placeholder="Rua, número, bairro" />
+                    </VerticalStackLayout>
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <VerticalStackLayout Grid.Column="0" Spacing="4">
+                            <Label Text="Cidade" />
+                            <Entry x:Name="CidadeEntry" Placeholder="Cidade" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="4">
+                            <Label Text="Estado" />
+                            <Entry x:Name="EstadoEntry" Placeholder="UF" MaxLength="2" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Data de Cadastro" />
+            <DatePicker x:Name="DataCadastroDatePicker" Format="dd/MM/yyyy" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="20" Margin="0,20,0,0">
+                <Button Grid.Column="0" Text="Cancelar" BackgroundColor="#F5F5DC" TextColor="Black" 
+                        Clicked="OnCancelarClicked" />
+                <Button Grid.Column="1" Text="Salvar" BackgroundColor="#6A0DAD" TextColor="White" 
+                        Clicked="OnSalvarClicked" />
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
